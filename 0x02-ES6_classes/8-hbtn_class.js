@@ -1,14 +1,18 @@
 export default class HolbertonClass {
   constructor(size, location) {
+    // Create objs
     this._size = size;
     this._location = location;
   }
 
-  toString() {
-    return this._location;
-  }
+  // Methods
 
-  valueOf() {
+  [Symbol.toPrimitive](type) {
+    if (type === 'string') return this._location;
     return this._size;
   }
+
+  // Setters
+
+  // Getters
 }
